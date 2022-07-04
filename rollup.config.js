@@ -6,6 +6,8 @@ import typescript from "@rollup/plugin-typescript";
 
 const packageJSON = require("./package.json");
 
+// add minify if it's not there --> babelPlugin , ["minify"]
+
 export default [
   {
     input: "./src/index.ts",
@@ -13,16 +15,15 @@ export default [
       file: packageJSON.main,
       format: "cjs",
       sourcemap: true,
-      minifyInternalExports: true,
     },
     plugins: [
       nodeResolve(),
       commonjs(),
-      typescript({ tsconfig: "./tsconfig.json" }),
       postcss({
         modules: true,
         sourceMap: true,
       }),
+      typescript({ tsconfig: "./tsconfig.json" }),
       getBabelOutputPlugin({ presets: ["@babel/preset-env", "minify"] }),
     ],
   },

@@ -4,8 +4,13 @@
   "description": "Horizontal-page",
   "main": "./dist/cjs/index.js",
   "scripts": {
-    "dev": "rollup -c -w"
+    "dev": "rollup -c -w",
+    "clear": "rm -rf ./dist",
+    "prepack": "rollup -c"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Horizontal-Page/horizontal-page.git"

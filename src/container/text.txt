@@ -1,0 +1,1 @@
+this is vannila js so you should learn DOM(Document Object Model) first if you want to contribute TY.

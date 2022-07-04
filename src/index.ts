@@ -1,13 +1,25 @@
-import styles from "./style.css";
+import styles from "./style.module.css";
+import container from "./container/container";
+import { scroll, resize } from "./eventListener";
+const wrapper = document.querySelector(".wrapper") as HTMLElement;
 
 class HorizontalScroll {
-  scrollY: number;
-
-  constructor() {
-    this.scrollY = window.scrollY;
+  element: Element;
+  constructor(_element: Element) {
+    this.element = _element;
   }
-  init() {}
+  public init() {
+    this.appendWrapper();
+    this.eventListener();
+  }
+  private eventListener() {
+    addEventListener("scroll", scroll);
+    addEventListener("resize", resize);
+  }
+  private appendWrapper() {
+    container(this.element);
+  }
 }
-const init = new HorizontalScroll();
 
-console.log(init);
+const firstPage = new HorizontalScroll(wrapper);
+firstPage.init();

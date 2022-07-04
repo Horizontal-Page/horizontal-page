@@ -1,8 +1,7 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+.container {
+  position: relative;
 }
-.wrapper {
-  background-color: #fff;
+.sticky {
+  position: sticky;
+  top: 0;
 }
